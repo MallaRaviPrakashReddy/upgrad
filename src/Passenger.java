@@ -10,29 +10,38 @@ public class Passenger {
         idCounter++;
     }
 
+    public int getId() {
+        return idCounter;
+    }
+
+
+
     public String getAddressDetails() {
         return address.getAddressDetails();
     }
 
-    public void setAddress(Address address) {
-        Passenger.address = address;
+    public void setAddress(String street,String city,String state) {
+        address.street=street;
+        address.city=city;
+        address.state=state;
     }
 
     public String getContactDetails() {
         return contact.getContactDetails();
     }
 
-    public void setContact(Contact contact) {
-        Passenger.contact = contact;
+    public void setContact(String name,String phoneNumber,String emailID) {
+
+        contact.name=name;
+        contact.phoneNumber=phoneNumber;
+        contact.emailId=emailID;
     }
 
     public static void main(String[] args) {
 
         Passenger p=new Passenger();
-        Address a=new Address("gurunagar","tirupati","AP");
-        p.setAddress(a);
-        Contact c=new Contact("kiran","7845129632","kiran@gmail.com");
-        p.setContact(c);
+        p.setAddress("gurunagar","tirupati","AP");
+        p.setContact("kiran","7845129632","kiran@gmail.com");
 
         System.out.println("Adress Details: \n"+p.getAddressDetails()+"\n");
         System.out.println("Contact Details: \n"+p.getContactDetails()+"\n");

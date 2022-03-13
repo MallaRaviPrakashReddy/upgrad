@@ -13,17 +13,20 @@ public abstract class Ticket {
     private LocalTime  timeOfDeparture;
     private LocalDate dateOfArrival;
     private LocalTime  timeOfArrival;
-    private Passenger passenger;
+    private Passenger passenger=new Passenger();
     private int seatNumber;
     private float priceOfTicker;
     private boolean ticketStatus;
-    public Flight flight;
+    public Flight flight=new Flight();
 
     //    Ticket(){
 //        RegularTicket regularTicket=new RegularTicket();
 //        TouristTicket touristTicket=new TouristTicket();
 //    }
-    Ticket(int pnrNumber, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker) {
+    Ticket(int pnrNumber,String passengerName,String phoneNumber,String emailId,String street,String city,String state, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker) {
+        passenger.setContact(passengerName,phoneNumber,emailId);
+        passenger.setAddress(street,city,state);
+
         this.pnrNumber = pnrNumber;
         this.departure = departure;
         this.destination = destination;
@@ -131,7 +134,7 @@ public abstract class Ticket {
         this.priceOfTicker = priceOfTicker;
     }
     public String ticketDetails(){
-        return "Ticket{" +
+        return "Passanger ID: "+passenger.getId()+"\nPassenger Contact Details: \n"+passenger.getContactDetails()+"\nPassenger Address Details: \n"+passenger.getAddressDetails()+"\nTicket{" +
                 "pnrNumber=" + pnrNumber +
                 ", departure='" + departure + '\'' +
                 ", destination='" + destination + '\'' +

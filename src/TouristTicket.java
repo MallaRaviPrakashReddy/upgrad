@@ -8,8 +8,8 @@ public class TouristTicket extends Ticket{
     private int locationCount;
 
 
-    TouristTicket(int pnrNumber, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker,String hotelAddress){
-        super(pnrNumber,departure, destination,flightName,dateOfDeparture, timeOfDeparture, dateOfArrival, timeOfArrival,seatNumber,priceOfTicker);
+    TouristTicket(int pnrNumber,String passengerName,String phoneNumber,String emailId,String street,String city,String state, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker,String hotelAddress){
+        super(pnrNumber,passengerName,phoneNumber,emailId,street,city,state,departure, destination,flightName,dateOfDeparture, timeOfDeparture, dateOfArrival, timeOfArrival,seatNumber,priceOfTicker);
 
         this.hotelAddress = hotelAddress;
         locations= new ArrayList<String>();
@@ -46,7 +46,7 @@ public class TouristTicket extends Ticket{
         LocalTime tod2 = LocalTime.of(14,55,30);
         LocalDate dod2 = LocalDate.of(2021, 7, 18);
         LocalDate doa2 = LocalDate.of(2021, 7, 17);
-        TouristTicket tt= new TouristTicket(2005, "mumbai", "washington", "Dolphin Airways", dod2,tod2,doa2, toa2,27, 52254,"ARC HOTEL Washington DC, Georgetown");
+        TouristTicket tt= new TouristTicket(2005, "raghu","8745892891","Raghu@gmail.com","gurnath","TDP","AP","mumbai", "washington", "Dolphin Airways", dod2,tod2,doa2, toa2,27, 52254,"ARC HOTEL Washington DC, Georgetown");
         tt.addTouristLocation("italy");
         tt.addTouristLocation("sweden");
         tt.addTouristLocation("japan");

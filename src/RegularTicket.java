@@ -6,9 +6,9 @@ public class RegularTicket extends Ticket {
     private boolean food;
     private boolean water;
     private boolean snacks;
-    RegularTicket(int pnrNumber, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker, String hotelAddress,boolean
+    RegularTicket(int pnrNumber, String passengerName,String phoneNumber,String emailId,String street,String city,String state,String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker, String hotelAddress,boolean
            food ,boolean water,boolean snacks){
-        super(pnrNumber,departure, destination,flightName,dateOfDeparture, timeOfDeparture, dateOfArrival, timeOfArrival,seatNumber,priceOfTicker);
+        super(pnrNumber,passengerName,phoneNumber,emailId,street,city,state,departure, destination,flightName,dateOfDeparture, timeOfDeparture, dateOfArrival, timeOfArrival,seatNumber,priceOfTicker);
 
         this.food = food;
         this.water=water;
@@ -76,7 +76,7 @@ public class RegularTicket extends Ticket {
         LocalTime tod1 = LocalTime.of(2,9,15);
         LocalDate doa1 = LocalDate.of(2017, 1, 13);
         LocalDate dod1 = LocalDate.of(2017, 1, 14);
-        RegularTicket rt=new RegularTicket(1001, "chennai","washington","Qatar Airways", dod1,tod1, doa1, toa1, 15, 45664,"Hilton Garden Inn Reagan National Airport,Washington, District of Columbia, United States of America",true,true,true);
+        RegularTicket rt=new RegularTicket(1001,"madhu","87458963512","madhu@gmail.com","gurnath","TDP","AP", "chennai","washington","Qatar Airways", dod1,tod1, doa1, toa1, 15, 45664,"Hilton Garden Inn Reagan National Airport,Washington, District of Columbia, United States of America",true,true,true);
         rt.updateSpecialServices("food");
         System.out.println(rt.specialServicesAvailed());
         rt.updateSpecialServices("water","snacks");
