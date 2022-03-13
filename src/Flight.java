@@ -23,6 +23,11 @@ public class Flight {
 
     public static void main(String[] args) {
         Flight f=new Flight(1552,"Dolphin",500,252);
+        System.out.println(f.getAirline());
+        System.out.println(f.getCapacity());
+        System.out.println(f.getFlightNumber());
+        System.out.println(f.getSeatsBooked());
+
         System.out.println(f.getFlightDetails());
     }
 
