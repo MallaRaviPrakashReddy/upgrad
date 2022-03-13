@@ -1,7 +1,7 @@
 import java.time.*;
 import java.time.temporal.ChronoUnit;
 
-public class Ticket {
+public abstract class Ticket {
 
     private int pnrNumber;
     private String departure;
@@ -128,15 +128,13 @@ public class Ticket {
     public void setPriceOfTicker(float priceOfTicker) {
         this.priceOfTicker = priceOfTicker;
     }
-     public static void main(String[] args){
-         LocalDate dod2 = LocalDate.of(2014, Month.JULY, 4);
-         LocalDate doa2= LocalDate.of(2014, Month.DECEMBER, 25);
-         LocalTime tod2= LocalTime.parse("10:15:30");
-         LocalTime toa2= LocalTime.parse("12:21:30");
-        Ticket t=new Ticket(2005, "mumbai", "washington", "Dolphin Airways", dod2,tod2,doa2, toa2,27, 52254);
-        System.out.println(t.checkStatus());
-        System.out.println(t.getDuration());
 
-     }
+//    after checkpoint-3 this will be abstract class so main method don't work' for testing
+//     public static void main(String[] args){
+//        Ticket t=new Ticket();
+//        System.out.println(t.checkStatus());
+//        System.out.println(t.getDuration());
+//
+//     }
 
 }

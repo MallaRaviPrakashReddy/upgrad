@@ -2,11 +2,14 @@ import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.ArrayList;
 
-public class TouristTicket{
+public class TouristTicket extends Ticket{
     private String hotelAddress;
     private ArrayList<String> locations ;
     private int locationCount;
-    TouristTicket(String hotelAddress){
+
+
+    TouristTicket(int pnrNumber, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker,String hotelAddress){
+        super(pnrNumber,departure, destination,flightName,dateOfDeparture, timeOfDeparture, dateOfArrival, timeOfArrival,seatNumber,priceOfTicker);
 
         this.hotelAddress = hotelAddress;
         locations= new ArrayList<String>();
@@ -40,7 +43,7 @@ public class TouristTicket{
         LocalTime tod2 = LocalTime.of(14,55,30);
         LocalDate dod2 = LocalDate.of(2021, 7, 18);
         LocalDate doa2 = LocalDate.of(2021, 7, 17);
-        TouristTicket tt= new TouristTicket("ARC HOTEL Washington DC, Georgetown");
+        TouristTicket tt= new TouristTicket(2005, "mumbai", "washington", "Dolphin Airways", dod2,tod2,doa2, toa2,27, 52254,"ARC HOTEL Washington DC, Georgetown");
         tt.addTouristLocation("italy");
         tt.addTouristLocation("sweden");
         tt.addTouristLocation("japan");
