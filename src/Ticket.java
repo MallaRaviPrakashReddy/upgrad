@@ -3,6 +3,8 @@ import java.time.temporal.ChronoUnit;
 
 public abstract class Ticket {
 
+
+
     private int pnrNumber;
     private String departure;
     private  String destination;
@@ -127,6 +129,23 @@ public abstract class Ticket {
 
     public void setPriceOfTicker(float priceOfTicker) {
         this.priceOfTicker = priceOfTicker;
+    }
+    public String ticketDetails(){
+        return "Ticket{" +
+                "pnrNumber=" + pnrNumber +
+                ", departure='" + departure + '\'' +
+                ", destination='" + destination + '\'' +
+                ", flightName='" + flightName + '\'' +
+                ", dateOfDeparture=" + dateOfDeparture +
+                ", timeOfDeparture=" + timeOfDeparture +
+                ", dateOfArrival=" + dateOfArrival +
+                ", timeOfArrival=" + timeOfArrival +
+                ", passenger=" + passenger +
+                ", seatNumber=" + seatNumber +
+                ", priceOfTicker=" + priceOfTicker +
+                ", ticketStatus=" + ticketStatus +
+                ", flight=" + flight +
+                '}';
     }
 
 //    after checkpoint-3 this will be abstract class so main method don't work' for testing

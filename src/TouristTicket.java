@@ -14,6 +14,9 @@ public class TouristTicket extends Ticket{
         this.hotelAddress = hotelAddress;
         locations= new ArrayList<String>();
     }
+    public String ticketDetails(){
+        return super.ticketDetails()+" Hotel Address: "+getHotelAddress();
+    }
     public void addTouristLocation(String location){
         if(locationCount<=4){
             locations.add(location);

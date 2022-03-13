@@ -6,8 +6,16 @@ public class RegularTicket extends Ticket {
     private boolean food;
     private boolean water;
     private boolean snacks;
-    RegularTicket(int pnrNumber, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker, String hotelAddress,boolean food,boolean water,boolean snacks){
+    RegularTicket(int pnrNumber, String departure, String destination, String flightName, LocalDate dateOfDeparture, LocalTime timeOfDeparture, LocalDate dateOfArrival, LocalTime timeOfArrival, int seatNumber, float priceOfTicker, String hotelAddress,boolean
+           food ,boolean water,boolean snacks){
         super(pnrNumber,departure, destination,flightName,dateOfDeparture, timeOfDeparture, dateOfArrival, timeOfArrival,seatNumber,priceOfTicker);
+
+        this.food = food;
+        this.water=water;
+        this.snacks=snacks;
+    }
+    public String ticketDetails(){
+        return super.ticketDetails()+" Special Services Available: "+specialServicesAvailed();
     }
 
 
